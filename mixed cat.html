@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>米克斯與他們的去處</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 字體包 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- 翻頁的css -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- 裡面的.text 是我自己統一的說明字型及大小 -->
+
+
+    <style>
+        body{background-color: #171C35}
+        .slideanimate,
+        .slideanimate01,
+        .slideanimateA,
+        .slideanimateslow,
+        .slideleft,
+        .slideleftslow {
+            visibility: hidden;
+        }
+
+        .slide,
+        .slide2 {
+            visibility: visible;
+        }
+
+
+        #pre {
+            background-image: url("assets/DSC_5026.JPG");
+        }
+
+
+        #strange,
+        #div3,
+        #div4,
+        #pre,
+        #player{
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .row {
+
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+
+
+        #text2 {
+            font-size: 3vh;
+            color: white;
+            font-family: 微軟正黑體;
+            “Microsoft JhengHei”,
+            sans-serif;
+            padding: 20px;
+        }
+
+        #text3 {
+            font-family: inherit;
+        }
+
+        #navbar {
+            background-color: whitesmoke;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: block;
+            transition: top 0.3s;
+            height: 45px;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: skyblue;
+            color: skyblue;
+        }
+
+        .slideanimate {
+            visibility: hidden;
+        }
+
+        .slide {
+            visibility: visible;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/velocity.min.js"></script>
+    <script src="js/velocity.ui.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+
+<!-- 因為我需要翻頁效果所以body這行必加-->
+
+<body data-hijacking="off" data-animation="scaleDown">
+
+    <div class="sticky-top" id="navbar" style="font-family: Microsoft JhengHei; position: absolute;background:#171C35 ">
+        <a href="#home">Home</a>
+        <a href="#text1">我想收養貓咪</a>
+        <a href="#text2">該怎麼照顧?</a>
+        <a href="#text3">貓咪過世該怎麼辦?</a>
+        <a href="#info">Contact Us</a>
+    </div>
+    <div style="min-height:400vh; background-color:#171C35;background-repeat: no-repeat;
+     background-attachment: fixed;background-position:center;background-size:cover;">
+        <!-- vh是視窗高度, background-attachment: fixed不管怎麼滾動都不動-->
+        <!--<div style="min-height: inherit;background-color:rgba(36, 47, 82, 0.6);"></div>這個是一個半透明的顏色，讓背景顏色比較黯淡一點 -->
+
+        <div id="div1" style="min-height: 250vh">
+
+            <img id=moon src="assets/new_landing/moon.png" data-speedx=0 data-speedy=0.33 style="position: fixed;left: 20vw;top: -25vh;width: 57%;transition: transform 0.1s">
+            <img id=title src="assets/new_landing/Title.png" data-speedx=0 data-speedy=0.20 style="position: fixed;width: 50vw;top: 8vh;left:35%;">
+
+            <img id=b1 src="assets/new_landing/Asset%20123.png" data-speedx=0 data-speedy=0.35 style="position: fixed;width: 88vw;top: 40vh;left:12%;">
+
+            <img id=b2 src="assets/new_landing/Asset%20122.png" data-speedx=0 data-speedy=0.44 style="position: fixed;width: 88vw;top: 50vh;left:10%;">
+            <img id=branch src="assets/new_landing/branch.png" data-speedx=0 data-speedy=0.60 style="position: fixed;width: 30vw;top: 30vh;left: 75%">
+            <img id=front src="assets/new_landing/front.png" data-speedx=0 data-speedy=0.60 style="position: fixed;width: 130vw;top: 30vh;left: 0%">
+
+
+
+
+        </div>
+
+        <div id="player" style="height:200vh;position:relative;">
+            <div class="container-fluid slideanimate01">
+                <video id="video1" controls style="width: 100vw;">
+                    <source src="assets/Produce_0.ogg" type="video/ogg">
+                    <source src="assets/Produce_0.mp4" type="video/mp4">
+                </video>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="text2">
+        <!-- div4 跟 pre 都是預備用的頁面，可以在style自行更改背景什麼的，只要把我貓藍過場那個保留就好 -->
+        <!--
+        <div id="div4" class="container-fluid " style="background-color:black;height:120vh;width: 100vw; position:relative;top:30px">
+        </div>
+        -->
+
+        <section class="cd-section visible slideanimate01">
+            <div class="row" style="height: 100vh;background-color:rgba(0,0,0,0)">
+                <div class="col-md-6">
+                    <img src="assets/DSC_5023.JPG" class="slideleftslow" style="width: 80%;
+            position: absolute;left:10%;top:25%;">
+                </div>
+
+                <div class="col-md-6">
+                    <div id="text2">
+
+                        <h1 style="position: absolute; top:10%;left:50px;">照顧貓咪需要花費的時間</h1>
+                        <p style="position: absolute; top:25%;left:50px;">每天---<br><br><br>跟貓咪玩/清理貓砂/貓毛<br><br>處理貓咪弄壞、弄亂的東西<br><br>收拾對貓咪有害的東西(尖銳物品、電線、貓咪不能吃的食物等)<br><br><br>兩三週一次---<br><br><br>剪指甲/清潔貓咪的耳朵跟牙齒<br><br><br>不定期---<br><br><br>帶貓咪看醫生
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cd-section visible ">
+            <div class="row" style="height: 100vh;background-color: rgba(0,0,0,0)">
+                <div class="col-md-6">
+                    <img src="assets/DSC_5016.JPG" class="slideleftslow" style="width: 80%;
+            position: absolute;left:10%;top:25%;">
+                </div>
+
+                <div class="col-md-6" style="">
+
+                    <div id="text2">
+
+                        <h1 style="position: absolute; top:10%;left:50px;">照顧貓咪的費用</h1>
+                        <p style="position: absolute; top:25%;left:50px;">第一年<br><br><br>飼料碗、貓砂盆、玩具：2000元<br><br>絕育手術+晶片+疫苗注射(三合一、五合一、白血病、狂犬病、 傳染性腹膜炎等)：5000元<br><br>之後固定開銷<br><br><br>每月貓食：1500元、貓砂：600元、滴劑(除蚤)：250元<br><br><br>每年預防針+檢查：3000元<br><br><br>生病診療費用：幾千元到萬元不等<br><br><br>老貓肝炎及定期醫療，每個月3-5000元
+                        </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cd-section visible ">
+            <div class="row" style="height: 100vh;background-color:rgba(0,0,0,0)">
+
+                <div class="col-md-12">
+                    <div id="text2 " style="position: absolute; top: 30%; left: 40%;">
+                        <h1>照顧貓咪一生約花費412600元<br><br>(不含老年生病醫療)<br><br>做好準備了嗎?<br><br></h1>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="pre" style="height:200vh;position:relative;">
+
+            <img class="scrollable" data-left=0 data-left2=120 data-top=25 data-top2=75 src="assets/catbox.png" style="position:absolute;width:20%;top:25%;left:0%;">
+
+
+        </div>
+
+
+
+        <section class="cd-section visible ">
+            <div class="row" style="height: 100vh;background-color: rgba(0,0,0,0)">
+                <div class="col-md-6">
+                    <img src="assets/boxcat.png" class="slideleftslow" style="width: 30%;
+            position: absolute;left:10%;top:25%;">
+                    <img src="assets/angry%20cat.png" class="slideleftslow" style="width: 30%;
+            position: absolute;left:40%;top:35%;">
+                    <img src="assets/hidingcat.png" class="slideleftslow" style="width: 40%;
+            position: absolute;left:50%;top:15%;">
+                </div>
+
+                <div class="col-md-6">
+                    <div id="text2">
+                        <img src="assets/strange.png" style="width: 60%;position: absolute;left:5%;top:10%;">
+                        <p style="position: absolute; top:30%;left:50px;">1. 剛到陌生環境的貓，通常都會因為沒有安全感而緊張、想要躲藏、甚至出現攻擊性的行為。<br><br>2. 從小空間開始熟悉<br><br>3. 可以固定一天2~3個時間餵食貓咪以培養感情，用罐頭最能打動貓咪的心。準備一些小玩具跟貓咪玩，或是單純的坐著看書、看電視陪貓咪都很好。<br><br>4. 當貓咪已經完全適應貓房和新主人後(可能只需一天，也可能需要好幾個星期)，打開房門，讓貓咪出去探索。但還是一樣的原則，讓貓咪自己決定什麼時候該走出去。<br>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cd-section">
+            <div class="row" style="height: 100vh;background-color: rgba(0,0,0,0)">
+                <div class="col-md-6">
+                    <div id="text2">
+                        <p style="position: absolute; top:30%;left:17px;color: #D6AA9A">
+                            1. 在把貓咪帶回家之前，先買好貓咪的食物及用品。<br><br>2. 將一間小房間或是飼養鐵籠外面罩上布佈置成貓咪的房間，放好砂盆、食物碗、水碗、舒適的小貓床、貓抓板、玩具…等等；<br><br>3. 最好準備一個可以讓貓咪把自己”藏起來”的箱子或有屋頂的貓床。<br><br>4. 可能製造危險的物品都要收好，例如清潔劑、藥品、電線、火源、可能掉出房子的地方、或可能吞入的小東西。<br><br>5. 如果貓咪是住在貓籠的話，切記貓籠至少要有兩層，並且準備好睡覺的床鋪，每天最好還是要有出來透氣的時間，以免把貓咪給關到悶壞了。
+                        </p>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <img src="assets/play.png" style="width: 30%;
+            position: absolute;left:15%;top:5%;">
+                    <img src="assets/play/Asset%2043.png" class="slideleftslow" style="width: 30%;
+            position: absolute;left:35%;bottom:25%;">
+                    <img src="assets/play/Asset%2044.png" class="slideleftslow" style="width: 20%;
+            position: absolute;left:20%;top:45%;">
+                    <img src="assets/play/Asset%2045.png" class="slideleftslow" style="width: 20%;
+            position: absolute;left:50%;top:5%;">
+                    <img src="assets/play/Asset%2046.png" class="slideleftslow" style="width: 15%;
+            position: absolute;left:70%;top:15%;">
+                    <img src="assets/play/Asset%2047.png" class="slideleftslow" style="width: 10%;
+            position: absolute;left:10%;top:35%;">
+                    <img src="assets/play/Asset%2048.png" class="slideleftslow" style="width: 15%;
+            position: absolute;left:60%;top:20%;">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cd-section">
+            <div class="row" style="height: 100vh;">
+
+                <div class="col-md-6">
+                    <img src="assets/eat.png" style="width: 40%;
+            position: absolute;left:60%;top:50%;">
+                    <img src="assets/food/Asset%2016.png" class="slideleftslow" style="width: 15%;
+            position: absolute;left:5%;top:15%;">
+                    <img src="assets/food/Asset%2017.png" class="slideleftslow" style="width: 15%;
+            position: absolute;left:25%;top:15%;">
+
+                    <img src="assets/food/Asset%2014.png" class="slideleftslow" style="width: 20%;
+            position: absolute;left:48%;top:17%;">
+                    <img src="assets/food/Asset%2018.png" class="slideleftslow" style="width: 17%;
+
+            position: absolute;left:75%;top:17%;">
+
+                    <img src="assets/food/Asset%2021.png" class="slideleftslow" style="width: 15%;
+            position: absolute;left:5%;top:45%;">
+                    <img src="assets/food/Asset%2022.png" class="slideleftslow" style="width: 16%;
+            position: absolute;left:22%;top:45%;">
+                    <img src="assets/food/Asset%2023.png" class="slideleftslow" style="width: 17%;
+            position: absolute;left:37%;top:42%;">
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <div id="text2">
+
+                        <p style="position: absolute; top:30%;left:17px;color:#F2D19C">
+                            1. 貓咪幼年期約為十二個月一般會由主人飼養的貓咪皆已經斷奶(正常幼貓1.5月大開始離乳，1.5~2月大斷奶)<br><br>2. 給予適合年齡以及身體狀況的貓飼料(有些廠牌也有特別為剛離乳小貓準備離乳貓飼料，可依貓年紀給予)<br><br>3. 幼貓一天餵食3~4餐，直到6個月大以後一天改餵食2~3餐。(貓咪建議一天還是至少兩餐)<br><br>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cd-section">
+            <div class="row" style="height: 100vh;">
+
+
+                <div class="col-md-6">
+                    <div id="text2">
+
+                        <p style="position: absolute; top:30%;left:17px;color:#AFC6C3">
+                            1. 貓咪屬於狩獵動物的關係幾乎沒有體味，<br><br>2. 大多數貓咪並不需要太常洗澡，最頻繁不要多於一周一次，過於頻繁的清洗易導致皮膚問題。洗劑請使用貓用洗劑，請勿使用人類洗劑。<br><br>3. 為貓咪洗澡時記得順便將肛門腺輕柔的擠乾淨，減少肛門腺炎發生的機率。<br><br>4. 另外清洗時小心耳朵進水，澡洗完後最好使用清耳劑清潔耳朵並帶出裡面水分。<br><br>5. 貓的清潔比洗澡更重要的是幫貓梳毛
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="assets/clean.png" style="width: 40%;
+            position: absolute;left:60%;top:50%;">
+
+
+
+                    <img src="assets/clean/Asset%2024.png" class="slideleftslow" style="width: 30%;
+            position: absolute;left:10%;top:15%;">
+                    <img src="assets/clean/Asset%2025.png" class="slideleftslow" style="width: 30%;
+            position: absolute;left:50%;top:15%;">
+
+                    <img src="assets/clean/Asset%2027.png" class="slideleftslow" style="width: 40%;
+            position: absolute;left:10%;top:45%;">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cd-section" id="chartContainer" style="height: 100vh;">
+
+        </section>
+        <section class="cd-section" style="height: 100vh;background-color:rgba(0,0,0,0)">
+            <div class="row" style="height: 100vh;">
+
+
+                <div class="col-md-6">
+                    <div id="text2">
+                        <p style="position: absolute; top:30%;left:40px;">
+                            1. 貓一般都有較強的忍受病痛的能力，貓患病後常躲藏在幽靜、暗淡的地方休息。<br><br>2. 貓患病後大多數都要影響到消化功能，常表現出食欲不振，甚至不吃不喝、嘔吐、腹瀉等癥狀。若不及時地給予易消化、營養豐富、美味可口的食物，特別是充足的飲水，可導致貓機體出現一系列功能紊亂、酸中毒、心力衰竭等現象，甚至死亡。<br><br>3. 腎貓後期需要自行皮下輸液，須做好心理準備<br><br>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="assets/care.png" style="width: 100%;
+            position: absolute;left:10%;top:15%;">
+                    <img src="assets/clean/Lu0Yq9.tif.png" class="slideleftslow" style="width: 40%;
+            position: absolute;left:50%;top:45%;">
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- lily正常來說你就直接添加你的div就好，如果也想要切換頁面效果就外面包一個section 用class="cd-section" ，下面兩個是分別的範例-->
+    <div id="text3">
+
+        <div id="div0" class="container-fluid" style="height:110vh; width: 100vw; background-color:rgba(0,0,0,0);font-family:  Microsoft JhengHei;position:relative">
+            <img src="assets/Asset%2053.png" style="position: absolute; top:250px; left: 550px">
+            <h1 class="slideanimate" style="position: absolute; top: 450px; left: 400px;color: aliceblue; font-size:40px"> 陪伴他走完生命最後的旅程...
+            </h1>
+        </div>
+
+        <div id="div01" class="container-fluid" style="height:110vh;width:100vw; background-color:rgba(0,0,0,0);font-family: Microsoft JhengHei;position:relative">
+            <div class="row">
+                <div class="col-sm-5 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:150px;left:50px;color:aliceblue; font-size:35px">有哪些機構可以協助我?</h1>
+                    <img class="slideanimateimg" src="assets/know/Asset%2062.png" style="position: absolute; top:300px; left: 150px; width: 250px">
+                </div>
+                <div class="col-sm-2 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:200px;color:#E5C3D0;font-size: 30px">動物保護處
+                        <br> Animal Protection Office
+                    </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 15px; top:400px;color:aliceblue">各縣市動保處皆有提供協助寵物過世處理的服務，費用和規定有些微的差異。
+                        <br>ex. 台北市動物保護處
+                    </p>
+                </div>
+                <div class="col-sm-2 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:200px;left: 15px; color:#cce6ff;font-size: 30px">動物醫院<br> Animal Hospital
+                    </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 15px; top:400px;color:aliceblue">也可以交給熟識或者鄰近的寵物醫院處理。
+                    </p>
+                </div>
+                <div class="col-sm-2 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:200px;color:#ffddcc;font-size: 30px">私人機構 <br> Private Associations
+                    </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 15px; top:400px;color:aliceblue; left: 10px">雖然費用較高，但是可以詳細的討論希望處理的方式與流程。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="div02" class="container-fluid" style="height:110vh;width:100vw;background-color:rgba(0,0,0,0);position:relative; font-family: Microsoft JhengHei">
+            <div class="row">
+                <div class="col-sm-5 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:150px;left:50px;color:aliceblue; font-size:35px">大致的處理流程</h1>
+                    <img class="slideanimateimg" src="assets/timeglass.png" style="position: absolute; top:300px; left: 150px; width: 180px">
+                </div>
+                <div class="col-sm-7 slideanimate01">
+                    <h1 class="slideanimate" style="position: absolute; top:200px;left:50px;color:#E5C3D0">動保處與動物醫院:</h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 20px; top:270px;color:aliceblue;left:50px">
+                        遺體運送>擇日集體火化
+                        <br>需要注意的是，集體火化並不能保存個別寵物的骨灰喔!
+                    </p>
+                    <h1 class="slideanimate" style="position: absolute; top:400px;left:50px;color:#ffddcc">私人機構: </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 20px; top:470px;color:aliceblue;left:50px">
+                        遺體接送>選擇火化日>遺體暫存>告別式>
+                        <br>火化>封罐>選擇安座,灑葬,樹葬等>舉辦追思會
+                        <br>過程中會有專業人員協助，不必太過擔心!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="div03" class="container-fluid" style="height:110vh;width:100vw;background-color:rgba(0,0,0,0); position:relative; font-family: Microsoft JhengHei">
+            <div class="row">
+                <div class="col-sm-5 slideanimate">
+                    <h1 class="slideanimate" style="position: absolute; top:150px;left:50px;color:aliceblue;font-size:35px">預估的費用</h1>
+                    <img class="slideanimateimg" src="assets/pig.png" style="position: absolute; top:300px; left: 120px; width: 250px">
+                </div>
+                <div class="col-sm-7 slideanimate2">
+                    <h1 class="slideanimate" style="position: absolute; top:200px;left:50px;color: #ecc6d9">各縣市動物保護處: </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 20px; top:250px;color:aliceblue;left:50px">
+                        以台北市動保處委準，集體火化:350NTD 以上
+                        <br>5公斤以內350NTD、超過5公斤每1公斤加收70NTD
+                        <br>
+                    </p>
+                    <h1 class="slideanimate" style="position: absolute; top:350px;left:50px;color:#ffddcc">私人機構: </h1>
+                    <p class="slideanimate" style="position: absolute; font-size: 20px; top:400px;color:aliceblue;left:50px">
+                        個別火化處理:3500-5000NTD
+                        <br>骨灰包裝:300(紙盒)-8000NTD
+                        <br>樹葬：0~6600NTD
+                        <br>盆葬：600~5000NTD
+                        <br>海葬：0~12000NTD
+                        <br>可以仔細評估自己的經濟狀態在做選擇!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="div04" class="container-fluid" style="height:110vh;width:100vw;background-image: url(assets/cat01.jpg);background-repeat: no-repeat;
+    background-attachment: fixed;background-position:center;background-size:cover; position:relative; font-family: Microsoft JhengHei">
+            <div class="row">
+                <div class="col-sm-8" style="position: absolute; top:150px;left:50px;color:aliceblue">
+                    <h1 class="slideanimateimg" style="position: absolute; top:5px;left:50px;color:aliceblue;font-size:50px">殯葬業者的分享</h1>
+                    <p class="slideanimate" style="position: absolute; top:120px;left:50px;color:aliceblue;font-size: 20px">
+                        Q:如何陪伴臨終的寵物?
+                        <br>
+                        A:長期生病（慢性病）
+                        除了最基本的陪伴和多觀察，還要紀錄。
+                        例如腎臟病腎衰的貓，需要紀錄給予他的水量，需要注意他的食物及熱量⋯等等的小細節。
+                        從這些方式，才能知道你的貓身體的狀況，直到最後。
+                    </p>
+                    <p class="slideanimate" style="position: absolute; top:300px;left:50px;color:aliceblue;font-size: 20px">
+                        Q:在工作中印象深刻的故事與經歷?
+                        <br>
+                        A:動物殯葬的工作內容，算是每一次都是特別的。
+                        動物的單純簡單和直接情感使我喜歡動物大過於喜歡人類。
+                        每一次的服務，就像是自己家中心愛的貓狗離開的感覺，
+                        每一段過程都會認識到這隻貓這隻狗的故事。
+                        有時會跟著飼主一起掉淚一起難過，跟著飼主一起不捨。
+                        幫忙打氣幫忙加油，給予安慰和協助最後。
+                        工作其實沒有不辛苦的。但是為喜歡的貓狗做事，就不覺得辛苦。反倒是人類的殯葬禮儀服務比較辛苦。
+                    </p>
+                </div>
+                <div class="col-sm-4" style="top:150px;left:850px; color: aliceblue">
+                </div>
+            </div>
+        </div>
+
+        <div id="div05" class="container-fluid" style="height:110vh;width:100vw;background-image: url(assets/cat01.jpg);background-repeat: no-repeat;
+    background-attachment: fixed;background-position:center;background-size:cover; position:relative; font-family: Microsoft JhengHei">
+            <h1 class="slideanimate2" style="position: absolute; top:300px;left:800px;color:aliceblue;font-size:30px">請支持領養代替購買 :)
+            </h1>
+        </div>
+
+    </div>
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var winh = $(window).height();
+            $(window).scroll(function() {
+                var scrolled = $(window).scrollTop();
+                $(".scrollable").each(function() {
+                    var parent_pos = $(this).parent().offset().top;
+                    var next_pos = $(this).parent().next().offset().top;
+                    var parent_height = $(this).parent().height();
+                    var parent_scrolled = scrolled - $(this).parent().offset().top;
+                    if (parent_scrolled > 0 && scrolled < next_pos - winh) {
+
+                        if ($(this).attr("data-left")) {
+                            $(this).css('left', (($(this).data('left2') - $(this).data('left')) * parent_scrolled / winh + $(this).data('left')) + '%');
+                        }
+                        if ($(this).attr("data-top")) {
+                            $(this).css('top', (($(this).data('top2') - $(this).data('top')) * parent_scrolled / winh + $(this).data('top')) + '%');
+                        }
+                        if ($(this).attr("data-width")) {
+                            $(this).css('width', (($(this).data('width2') - $(this).data('width')) * parent_scrolled / winh + $(this).data('width')) + '%');
+                        }
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.8) {
+                        $(this).addClass("animated fadeInUp slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInUp slide");
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimateslow").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.6) {
+                        $(this).addClass("animated fadeInUp slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInUp slide");
+                    }
+                });
+            });
+        });
+
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideleft").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.3) {
+                        $(this).addClass("animated fadeInLeft slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInLeft slide");
+                    }
+                });
+            });
+        });
+
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideleftslow").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.5) {
+                        $(this).addClass("animated fadeInLeft slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInLeft slide");
+                    }
+                });
+            });
+        });
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate00").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.98) {
+                        $(this).addClass("animated fadeInUp slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInUp slide");
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate01").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.8) {
+                        $(this).addClass("animated fadeInUp slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeInUp slide");
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimate2").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.9) {
+                        $(this).addClass("animated fadeIn slide");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated fadeIn slide");
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).scroll(function() {
+                $(".slideanimateimg").each(function() {
+                    var winTop = $(window).scrollTop();
+                    var winh = $(window).height();
+                    var objpos = $(this).offset().top;
+                    if (objpos < winTop + winh * 0.9) {
+                        $(this).addClass("animated slideInLeft");
+                    }
+                    if (winTop == 0) {
+                        $(this).removeClass("animated slideInLeft");
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        $(document).ready(function() {
+            var winw = $(window).width(),
+                winh = $(window).height(); <!-- winw視窗寬度 winh視窗高度 -->
+            var doch = $(document).height() - winh; <!-- doch文件高度 -->
+
+
+            $(window).scroll(function() {
+                var scrolled = $(window).scrollTop();
+
+
+
+                $("#moon").css('transform', "translate(" + (scrolled * $("#moon").data("speedx")) + "px," + (-scrolled * $("#moon").data("speedy")) + "px)");
+                $("#front").css('transform', "translate(" + (scrolled * $("#front").data("speedx")) + "px," + (-scrolled * $("#front").data("speedy")) + "px)");
+                $("#b1").css('transform', "translate(" + (scrolled * $("#b1").data("speedx")) + "px," + (-scrolled * $("#b1").data("speedy")) + "px)");
+                $("#b2").css('transform', "translate(" + (scrolled * $("#b2").data("speedx")) + "px," + (-scrolled * $("#b2").data("speedy")) + "px)");
+                $("#title").css('transform', "translate(" + (scrolled * $("#title").data("speedx")) + "px," + (-scrolled * $("#title").data("speedy")) + "px)");
+                $("#branch").css('transform', "translate(" + (scrolled * $("#branch").data("speedx")) + "px," + (-scrolled * $("#branch").data("speedy")) + "px)");
+
+
+
+
+
+
+            });
+        });
+
+        //播放影片
+        $(function() {
+            var video_h = $('#player').offset().top;
+            $(window).scroll(function() {
+                var winh = $(window).height();
+                var winTop = $(window).scrollTop();
+                if (video_h < winTop + winh * 0.8 && !$('#video1').hasClass("end")) {
+                    $('#video1')[0].play();
+                    $('#video1').on("ended", function() {
+
+                        $("#video1").addClass("end");
+                      
+                        
+                    });
+                }
+                if (video_h + winh < winTop) {
+                    $('#video1')[0].pause();
+                }
+
+            });
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>
